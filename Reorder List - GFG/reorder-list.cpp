@@ -94,7 +94,7 @@ public:
                      l2=l2->next;
                }
            }
-           head=ans->next;
+           head=ans;
          
     }
 };
