@@ -57,7 +57,7 @@ void f(Node* root , int target,int sum , int csum ,int &maxi ,bool flag){
         // cout<<"e";
         flag=true;
         sum -=target;
-        // cout<<sum;
+       
         
     }
     if(root->left ==NULL && root->right==NULL)
@@ -81,41 +81,7 @@ void f(Node* root , int target,int sum , int csum ,int &maxi ,bool flag){
 
 }
         
-    
-//         if(root==NULL)
-//         {
-//             return ; 
-//         }
-//         if(root->data==target)
-//         {
-//             flag=true; 
-        
-//         }
-        
-//         if(flag)
-//         {
-//             csum+=root->data;
-//              f(root->left, target ,sum ,csum ,maxi ,flag);
-//   f(root->right,target ,sum ,csum ,maxi, flag);
-//      if(root->left ==NULL && root->right==NULL)
-//     {
-//       csum-=target;
-         
-           
-//              maxi=max(maxi, sum -csum);
-         
-         
-//          return ;
-//     }
-//         }
-//         else
-//         {
-//             sum+=root->data;
-//               f(root->left, target ,sum ,csum ,maxi ,flag);
-//   f(root->right,target ,sum ,csum ,maxi, flag);
-//         }
-        
-    // } 
+  
     int maxDifferenceBST(Node *root,int target){
        bool flag =false; 
       int maxi=INT_MIN;
@@ -128,47 +94,6 @@ void f(Node* root , int target,int sum , int csum ,int &maxi ,bool flag){
          else
         return maxi;
     
-//     if(target<root->data)
-//     {
-//           f(root->left,target,sum ,csum,maxi,flag);
-//     }
-//     else if(target>root->data)
-//     {
-       
-//           f(root->right,target,sum ,csum,maxi,flag);
-//     }
-//     else
-//     {
-//         if(root->data==target){
-        
-        
-//       flag =true;
-//   sum=0;
-//           f(root->left,target,sum ,csum,maxi,flag);
-//     sum=0;
-//             f(root->right,target,sum ,csum,maxi,flag);
-          
-//              if(flag==true)
-//     {
-//          if(maxi==INT_MIN)
-//          return 0 ;
-//          else
-//         return maxi;
-//     }
-//         }
-//         else
-//          return -1;
-//     }
-
-//     if(flag==true)
-//     {
-//          if(maxi==INT_MIN)
-//          return 0 ;
-//          else
-//         return maxi;
-//     }
-//     else
-//     return -1; 
     }
 };
 
