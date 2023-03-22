@@ -40,82 +40,82 @@ public:
 void f(Node* root , int target,int sum , int csum ,int &maxi ,bool flag){
 // {
     
-//     if(root==NULL)
-//     {
-//         return ;
-//     }
-//      if(flag ==true)
-//     {
+    if(root==NULL)
+    {
+        return ;
+    }
+     if(flag ==true)
+    {
       
-//         csum+=root->data;
+        csum+=root->data;
  
         
-//     }
-//           if(flag==false)
-//     sum+=root->data;
-//     if(root->data==target){
-//         // cout<<"e";
-//         flag=true;
-//         sum -=target;
-//         // cout<<sum;
+    }
+          if(flag==false)
+    sum+=root->data;
+    if(root->data==target){
+        // cout<<"e";
+        flag=true;
+        sum -=target;
+        // cout<<sum;
         
-//     }
-//     if(root->left ==NULL && root->right==NULL)
-//     {
-      
-//          if(flag==true)
-//          {
-//             //  cout<<sum<<" "<<csum;
-//              maxi=max(maxi, sum -csum);
-//             //  cout<<maxi<<"m";
-//          }
-//          return ;
-//     }
-   
-
-    
-    
-   
-//   f(root->left, target ,sum ,csum ,maxi ,flag);
-//   f(root->right,target ,sum ,csum ,maxi, flag);
-
-// }
-        
-    
-        if(root==NULL)
-        {
-            return ; 
-        }
-        if(root->data==target)
-        {
-            flag=true; 
-        
-        }
-        
-        if(flag)
-        {
-            csum+=root->data;
-             f(root->left, target ,sum ,csum ,maxi ,flag);
-  f(root->right,target ,sum ,csum ,maxi, flag);
-     if(root->left ==NULL && root->right==NULL)
+    }
+    if(root->left ==NULL && root->right==NULL)
     {
-       csum-=target;
-         
-           
+      
+         if(flag==true)
+         {
+            //  cout<<sum<<" "<<csum;
              maxi=max(maxi, sum -csum);
-         
-         
+            //  cout<<maxi<<"m";
+         }
          return ;
     }
-        }
-        else
-        {
-            sum+=root->data;
-              f(root->left, target ,sum ,csum ,maxi ,flag);
+   
+
+    
+    
+   
+  f(root->left, target ,sum ,csum ,maxi ,flag);
   f(root->right,target ,sum ,csum ,maxi, flag);
-        }
+
+}
         
-    } 
+    
+//         if(root==NULL)
+//         {
+//             return ; 
+//         }
+//         if(root->data==target)
+//         {
+//             flag=true; 
+        
+//         }
+        
+//         if(flag)
+//         {
+//             csum+=root->data;
+//              f(root->left, target ,sum ,csum ,maxi ,flag);
+//   f(root->right,target ,sum ,csum ,maxi, flag);
+//      if(root->left ==NULL && root->right==NULL)
+//     {
+//       csum-=target;
+         
+           
+//              maxi=max(maxi, sum -csum);
+         
+         
+//          return ;
+//     }
+//         }
+//         else
+//         {
+//             sum+=root->data;
+//               f(root->left, target ,sum ,csum ,maxi ,flag);
+//   f(root->right,target ,sum ,csum ,maxi, flag);
+//         }
+        
+    // } 
     int maxDifferenceBST(Node *root,int target){
        bool flag =false; 
       int maxi=INT_MIN;
