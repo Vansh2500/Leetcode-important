@@ -25,8 +25,22 @@ class Solution
     }
     int knapSack(int W, int wt[], int val[], int n) 
     { 
-       vector<vector<int >>v(n, vector<int >(1000,-1));
-      return f(0, wt, val, n, 0,W,v);
+       vector<vector<int >>v(n+1, vector<int >(1000,0));
+    //   return f(0, wt, val, n, 0,W,v);
+    for(int ind= n-1 ;ind>=0;ind--)
+    {
+        for(int weight =W; weight>=0;weight--)
+        {
+               int nottake=   v[ind+1][weight];
+        int take= 0;
+     
+        if(wt[ind]+weight<=W)
+         take =val[ind]+v[ind+1][weight+wt[ind]];
+         
+        v[ind][weight]=max(take, nottake);
+        }
+    }
+    return v[0][0];
     }
 };
 
