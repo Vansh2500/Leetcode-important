@@ -10,9 +10,8 @@ using namespace std;
 class Solution{
 public:
     int n ;
-      bool isPalindrome(string &s){
-        int start=0 , end= s.size()-1;;
-
+      bool isPalindrome(int start ,int end ,string &s){
+      
         while(start<=end)
         {
             if(s[start++]!=s[end--])
@@ -28,8 +27,8 @@ public:
         int sum =INT_MAX; 
         for(int i= ind; i <n;i++)
         {
-            string str= s.substr(ind ,i-ind+1);
-            if(isPalindrome(str)){
+           
+            if(isPalindrome(ind ,i,s)){
             
                 sum=min(sum , 1+f(i+1, s,dp));
             }
